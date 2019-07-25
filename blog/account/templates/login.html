@@ -1,0 +1,26 @@
+{% extends 'base.html'%} <!--extends 우선순위가 가장 높음 -->
+
+{% block contents %}
+
+<div class="container">
+    
+    <h1>Login</h1>
+           
+    <form method = "POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        Username:
+        <br>
+        <input name="username" type="text" value="">
+        <br>
+        
+        Password:
+        <br>
+        <input name="password" type="password" value="">
+        <br>
+        <br>
+        <input class="btn btn-primary" type="submit" value="login!">
+    </form>
+        
+            
+</div>
+{% endblock %}

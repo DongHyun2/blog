@@ -1,0 +1,31 @@
+{% extends 'base.html'%} <!--extends 우선순위가 가장 높음 -->
+
+{% block contents %}
+<div class="container">
+    
+<h1>Sign up!</h1>
+   
+<form action="{% url 'signup' %}" method="POST">
+    {% csrf_token %} <!-- 보안을 위해서 써주는 난수 발생기, csrf공격을 방어하는 수단, 포스트방식에서 보안을 위해 써주면 좋음-->
+    Username:
+    <br>
+    <input name="username" type="text" value="">
+    <br>
+
+    Password:
+    <br>
+    <input name="password1" type="password" value="">
+    <br>
+
+    Confirm Password:
+    <br>
+    <input name="password2" type="password" value="">
+    <br>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Sign up!">
+</form>
+
+    
+</div>
+
+{% endblock %}
