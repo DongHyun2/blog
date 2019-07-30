@@ -24,7 +24,7 @@ def login(request):
     else:        
         return render(request, 'login.html')
 
-def logout(requset):
+def logout(request):
     if request.method == 'POST':
         auth.logout(request)
         return redirect('home')
